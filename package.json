@@ -1,0 +1,14 @@
+{
+	"devDependencies": {
+		"live-server": "^1.2.1"
+	},
+	"name": "xmas-clues",
+	"private": true,
+	"license": "MIT",
+	"repository": "https://github.com/robertbullen/xmas-clues.git",
+	"scripts": {
+		"build": "./generate-example-gif.sh && ./generate-qr-codes.sh",
+		"start": "(cd public && live-server --open='?clueName=kerry1')"
+	},
+	"version": "1.0.0"
+}
