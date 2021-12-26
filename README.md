@@ -24,7 +24,7 @@ Each script installs its dependencies using [Homebrew](https://brew.sh/) (becaus
 
 ## How It Works
 
-When the `public/index.html` webpage is requested, the `?clueName=<clueName>` query parameter must be provided, where `<clueName>` is the name of the markdown file without extension. The browser then requests the corresponding markdown file from the server, renders it into the DOM, and adds some simple animation (unless the `&skipAnimation` query parameter is provided, which is handy for quickly viewing changes during development). 
+When the `public/index.html` webpage is requested, the `?clueName=<clueName>` query parameter must be provided, where `<clueName>` is the name of the markdown file without extension. The browser then requests the corresponding markdown file from the server, renders it into the DOM, and adds some simple animation (unless the `&skipAnimation` query parameter is provided, which is handy for quickly viewing changes during development).
 
 For example, navigating to <https://robertbullen.com/xmas-clues/?clueName=kerry1> results in something like this, as it would be rendered on a 9:16 mobile device:
 
