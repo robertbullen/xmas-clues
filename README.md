@@ -6,12 +6,12 @@ This simple web project was created as part of a Christmas present for my family
 
 ### Web Content
 
-The `public` directory holds all web content that is uploaded to a web server:
+The `public` directory holds all web content intended to be uploaded to a web server:
 
 - a single `public/index.html` page, and
 - a `public/clues` directory, which holds all riddles as markdown files.
 
-Note: Markdown files use `.txt` as their extensions so that the hosting IIS server will serve them up; it returned 404 status codes when the standard `.md` extension was used.
+Note: Markdown files use `.txt` as their extensions so that the hosting IIS server will serve them up; otherwise it returned 404 status codes when the standard `.md` extension was used.
 
 ### Shell Scripts
 
@@ -20,9 +20,9 @@ There are also a couple shell scripts in the project root that generate some gra
 - `generate-example-gif.sh` - Generates the example animated GIF below.
 - `generate-qr-codes.sh` - Generates a sheet of QR codes as a PNG image, which can be printed and cut into physical QR codes for placement in the real world.
 
-Each script installs its dependencies using [Homebrew](https://brew.sh/) (because this project was developed on macOS) as one of the first steps.
+Each script installs its dependencies using [Homebrew](https://brew.sh/) (because this project was developed on macOS) as one of the first steps. As a result, these scripts may take a long time to run the first time they are executed.
 
-## How It Works
+## How the App Works
 
 When the `public/index.html` webpage is requested, the `?clueName=<clueName>` query parameter must be provided, where `<clueName>` is the name of the markdown file without extension. The browser then requests the corresponding markdown file from the server, renders it into the DOM, and adds some simple animation (unless the `&skipAnimation` query parameter is provided, which is handy for quickly viewing changes during development).
 
@@ -44,7 +44,7 @@ yarn start
 
 ## Deployment
 
-Deployment consists of the following steps:
+Deploying the app consists of the following steps:
 
 1. Assign the `BASE_URL` variable in `generate-qr-codes.sh` to the address of the website that will serve this project.
 2. Run `yarn build` to generate the QR codes sheet.
